@@ -20,6 +20,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { UserService } from './services/user.service';
 import { AuthInterceptor } from '../app/auth.interceptor';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -33,15 +36,18 @@ import { AuthInterceptor } from '../app/auth.interceptor';
     CardManagementComponent,
     MoneyTransferComponent,
     AuthenticationComponent,
-    UserListComponent
+    UserListComponent,
+    LoginComponent,
+    SignupComponent
   ],
-    imports: [
-        NgbModule,
-        BrowserModule,
-        RouterOutlet,
-        AppRoutingModule,
-        HttpClientModule
-    ],
+  imports: [
+    NgbModule,
+    BrowserModule,
+    RouterOutlet,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+  ],
   providers: [
     UserService,
     {
