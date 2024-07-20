@@ -6,9 +6,12 @@ import { AccountManagementComponent } from './pages/account-management/account-m
 import { CardManagementComponent } from './pages/card-management/card-management.component';
 import { MoneyTransferComponent } from './pages/money-transfer/money-transfer.component';
 import { AuthenticationComponent } from './pages/authentication/authentication.component';
+import {RegisterComponent} from "./components/register/register.component";
+import {LoginComponent} from "./components/login/login.component";
 
 const routes: Routes = [
- // { path: '', component: HomeComponent,pathMatch:"full" },
+  {path: "register", component: RegisterComponent },
+  {path: "login", component: LoginComponent},
   { path: 'users', component: UserListComponent },
   { path: 'account-management', component: AccountManagementComponent },
   { path: 'card-management', component: CardManagementComponent },
