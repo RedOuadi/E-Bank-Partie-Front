@@ -7,10 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-import { AccountManagementComponent } from './pages/account-management/account-management.component';
-import { CardManagementComponent } from './pages/card-management/card-management.component';
-import { MoneyTransferComponent } from './pages/money-transfer/money-transfer.component';
-import { AuthenticationComponent } from './pages/authentication/authentication.component';
+
 import { UserListComponent } from './components/user-list/user-list.component';
 import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
@@ -34,10 +31,6 @@ import {RegisterComponent} from "./components/register/register.component";
     NavbarComponent,
     FooterComponent,
 
-    AccountManagementComponent,
-    CardManagementComponent,
-    MoneyTransferComponent,
-    AuthenticationComponent,
     UserListComponent,
     LoginComponent,
     RegisterComponent
