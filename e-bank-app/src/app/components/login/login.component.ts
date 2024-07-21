@@ -12,6 +12,7 @@ import { JwtService } from '../../services/jwt.service';
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
+  showPassword: boolean = false;
 
   constructor(
     private service: JwtService,
@@ -24,6 +25,9 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
+  }
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 
   submitForm(): void {

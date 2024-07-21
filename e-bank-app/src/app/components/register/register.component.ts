@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JwtService } from '../../services/jwt.service';
+import { Router } from '@angular/router';
+import { Jwt } from '../../model/Jwt';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +12,7 @@ import { JwtService } from '../../services/jwt.service';
 export class RegisterComponent implements OnInit {
 
   registerForm!: FormGroup
+  showPassword: boolean = false;
 
 
     constructor(
@@ -36,6 +39,9 @@ export class RegisterComponent implements OnInit {
     {
       formGroup.get('confirmPassword')?.setErrors(null);
     }
+  }
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
   submitForm() {
     if (this.registerForm.valid) {
