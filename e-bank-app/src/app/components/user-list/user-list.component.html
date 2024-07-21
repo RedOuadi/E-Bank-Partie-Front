@@ -1,20 +1,25 @@
 <div class="container">
-    <h2>User List</h2>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users">
-          <td>{{ user.userId }}</td>
-          <td>{{ user.nom }}</td>
-          <td>{{ user.email }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <h2>User List</h2>
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
   </div>
-  
+  <table class="table table-striped" *ngIf="users.length > 0; else noUsers">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.userId }}</td>
+      <td>{{ user.nom }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+    </tbody>
+  </table>
+  <ng-template #noUsers>
+    <p>No users found.</p>
+  </ng-template>
+</div>

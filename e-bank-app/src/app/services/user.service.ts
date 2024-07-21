@@ -8,10 +8,13 @@ import { User } from '../model/user';
 })
 export class UserService {
 
+  private baseUrl = 'http://localhost:8084/api/users/';
+
   constructor(private http: HttpClient) {}
 
-  public geUsers(): Observable<any> {
-    return this.http.get("http://localhost:8084/api/users/all");
+  public getUsers(): Observable<any> {
+    return this.http.get(this.baseUrl + 'all');
   }
 }
+
 
